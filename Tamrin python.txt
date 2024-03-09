@@ -9,218 +9,24 @@
 
 2:
 
-import os
 
-option = 1
-
-card_number = 0
-Cards_List = []
-Mojoodi_List = []
-
-def EnterCard():
-    return int(input("Enter your card : "))
-
-def FoundCard(input_data):
-    counter = 0
-    for item in Cards_List:
-        if(item == input_data):
-            card_number = counter
-            break
-        elif(item != input_data):
-            counter += 1
-
-    return counter
-
-def Deposit():
-    card = EnterCard()
-    
-    card_number = FoundCard(card)
-
-    cash = int(input("enter amount of cash you want to deposit : "))
-    
-    Mojoodi_List[card_number] += cash
-
-def Withdraw():
-    card = EnterCard()
-    
-    card_number = FoundCard(card)
-
-    cash = int(input("enter amount of cash you want to withdraw : "))
-    
-    Mojoodi_List[card_number] -= cash
-
-def AddCard():
-    card_input = EnterCard()
-    
-    number = FoundCard(card_input)
-    
-    if(number == Cards_List.__len__()):
-        Cards_List.append(card_input)
-        Mojoodi_List.append(int(input("Enter Amount of your card : ")))
-        
-    else:
-        print("You already add this card to list!!")
-
-def RemoveCard():
-    card = EnterCard()
-    
-    Mojoodi_List.remove(FoundCard(card))
-    
-    Cards_List.remove(card)
-
-def HowMuch():
-    card = EnterCard()
-    
-    card_number = FoundCard(card)
-    
-    print("Amount of Cash in Account : " + str(Mojoodi_List[card_number]))
-    
-    input("\n press enter...")
-
-while option:
-    option = int(input("[1] Add Card \n [2] Deposit \n [3] Withdraw \n [4] Remove \n [5] Mojoodi \n [0] exit \n Enter Option :"))
-    
-    if(option == 0):
-        pass
-    elif(option == 1):
-        AddCard()
-    elif(option == 2):
-        Deposit()
-    elif(option == 3):
-        Withdraw()
-    elif(option == 4):
-        RemoveCard()
-    elif(option == 5):
-        HowMuch()
-    else:
-        print("Wrong Option")
-    
-    os.system('cls')
 
 ========================================
 ========================================
 
 3:
 
-def Sum(number1, number2):
-    result = number1 + number2
-    
-    return result
 
-def Multiple(number1, number2):
-    result = number1 * number2
-    
-    return result
-
-def Divide(number1, number2):
-    result = number1 / number2
-    
-    return result
-
-def Difference(number1, number2):
-    if(number1 > number2):
-        result = "big"
-        
-    elif(number1 < number2):
-        result = "low"
-        
-    else:
-        result = "no"
-        
-    
-    return result
-
-option = int(input("[1] sum \n [2] multiple \n [3] divide \n [4] difference \n enter option : "))
-
-number1 = int(input("Enter number one : "))
-number2 = int(input("Enter number two : "))
-
-result = 0
-
-if(option == 1):
-    result = Sum(number1, number2)
-    print(f"\nResult of Sum is : {result}")
-    
-elif(option == 2):
-    result = Multiple(number1, number2)
-    print(f"\nResult of Multiple is : {result}")
-    
-elif(option == 3):
-    result = Divide(number1, number2)
-    print(f"\nResult of Divide is : {result}")
-    
-elif(option == 4):
-    result = Difference(number1, number2)
-    
-    if(result == "big"):
-        print(f"\n {number1} is bigger than {number2}")
-        
-    elif(result == "low"):
-        print(f"\n {number1} is lower than {number2}")
-        
-    else:
-        print(f"\n {number1} and {number2} are equal")
 
 ========================================
 ========================================
 
 4:
 
-def Cel_TO_Fo(input_data):
-    result = float(((18 / 10) * input_data) + 32)
-    
-    return result
 
-def Fo_TO_Cel(input_data):
-    result = float(((input_data - 32) * 10) / 18)
-    
-    return result
-
-option = int(input("[1] celcius to fahreneit \n [2] fohreneit to celcius \n enter option : "))
-
-data = int(input("enter number : "))
-
-if(option == 1):
-    result = Cel_TO_Fo(data)
-    
-    print(f"\n Result : {result}")
-    
-elif(option == 2):
-    result = Fo_TO_Cel(data)
-    
-    print(f"\nResult : {result}")
-    
-else:
-    print("wrong option you choose")
 
 ========================================
 ========================================
 
 5:
 
-import turtle
-
-size = int(input("enter size of square : "))
-
-length = int(input("enter length of District of square : "))
-
-color = input("enter color of square : ")
-
-t = turtle.Turtle()
-
-screen = t.getscreen()
-
-t.pencolor(color)
-
-t.pensize(size)
-
-t.fd(100)
-t.rt(90)
-t.fd(100)
-t.rt(90)
-t.fd(100)
-t.rt(90)
-t.fd(100)
-t.rt(90)
-
-screen.mainloop()
